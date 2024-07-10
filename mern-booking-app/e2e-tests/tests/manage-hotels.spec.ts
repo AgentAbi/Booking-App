@@ -51,11 +51,11 @@ test("should allow user to add a hotel", async ({ page }) => {
 test("should display hotels", async ({ page }) => {
   await page.goto(`${UI_URL}my-hotels`);
 
-  await expect(page.getByText("Dublin Getaways")).toBeVisible();
+  await expect(page.getByText("Chennai Getaways")).toBeVisible();
   await expect(page.getByText("Lorem ipsum dolor sit amet")).toBeVisible();
-  await expect(page.getByText("Dublin, Ireland")).toBeVisible();
+  await expect(page.getByText("Cennai, India")).toBeVisible();
   await expect(page.getByText("All Inclusive")).toBeVisible();
-  await expect(page.getByText("£119 per night")).toBeVisible();
+  await expect(page.getByText("Rs 119 per night")).toBeVisible();
   await expect(page.getByText("2 adults, 3 children")).toBeVisible();
   await expect(page.getByText("2 Star Rating")).toBeVisible();
 
@@ -71,16 +71,16 @@ test("should edit hotel", async ({ page }) => {
   await page.getByRole("link", { name: "View Details" }).first().click();
 
   await page.waitForSelector('[name="name"]', { state: "attached" });
-  await expect(page.locator('[name="name"]')).toHaveValue("Dublin Getaways");
-  await page.locator('[name="name"]').fill("Dublin Getaways UPDATED");
+  await expect(page.locator('[name="name"]')).toHaveValue("Chennai Getaways");
+  await page.locator('[name="name"]').fill("Chennai Getaways UPDATED");
   await page.getByRole("button", { name: "Save" }).click();
   await expect(page.getByText("Hotel Saved!")).toBeVisible();
 
   await page.reload();
 
   await expect(page.locator('[name="name"]')).toHaveValue(
-    "Dublin Getaways UPDATED"
+    "Chennai Getaways UPDATED"
   );
-  await page.locator('[name="name"]').fill("Dublin Getaways");
+  await page.locator('[name="name"]').fill("Chennai Getaways");
   await page.getByRole("button", { name: "Save" }).click();
 });
