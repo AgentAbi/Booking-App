@@ -21,20 +21,20 @@ test.beforeEach(async ({ page }) => {
 test("should show hotel search results", async ({ page }) => {
   await page.goto(UI_URL);
 
-  await page.getByPlaceholder("Where are you going?").fill("Dublin");
+  await page.getByPlaceholder("Where are you going?").fill("Chennai");
   await page.getByRole("button", { name: "Search" }).click();
 
-  await expect(page.getByText("Hotels found in Dublin")).toBeVisible();
-  await expect(page.getByText("Dublin Getaways")).toBeVisible();
+  await expect(page.getByText("Hotels found in Chennai")).toBeVisible();
+  await expect(page.getByText("Chennai Getaways")).toBeVisible();
 });
 
 test("should show hotel detail", async ({ page }) => {
   await page.goto(UI_URL);
 
-  await page.getByPlaceholder("Where are you going?").fill("Dublin");
+  await page.getByPlaceholder("Where are you going?").fill("Chennai");
   await page.getByRole("button", { name: "Search" }).click();
 
-  await page.getByText("Dublin Getaways").click();
+  await page.getByText("Chennai Getaways").click();
   await expect(page).toHaveURL(/detail/);
   await expect(page.getByRole("button", { name: "Book now" })).toBeVisible();
 });
@@ -42,7 +42,7 @@ test("should show hotel detail", async ({ page }) => {
 test("should book hotel", async ({ page }) => {
   await page.goto(UI_URL);
 
-  await page.getByPlaceholder("Where are you going?").fill("Dublin");
+  await page.getByPlaceholder("Where are you going?").fill("Chennai");
 
   const date = new Date();
   date.setDate(date.getDate() + 3);
@@ -51,10 +51,10 @@ test("should book hotel", async ({ page }) => {
 
   await page.getByRole("button", { name: "Search" }).click();
 
-  await page.getByText("Dublin Getaways").click();
+  await page.getByText("Chennai Getaways").click();
   await page.getByRole("button", { name: "Book now" }).click();
 
-  await expect(page.getByText("Total Cost: £357.00")).toBeVisible();
+  await expect(page.getByText("Total Cost: Rs 357.00")).toBeVisible();
 
   const stripeFrame = page.frameLocator("iframe").first();
   await stripeFrame
@@ -68,5 +68,5 @@ test("should book hotel", async ({ page }) => {
   await expect(page.getByText("Booking Saved!")).toBeVisible();
 
   await page.getByRole("link", { name: "My Bookings" }).click();
-  await expect(page.getByText("Dublin Getaways")).toBeVisible();
+  await expect(page.getByText("Chennai Getaways")).toBeVisible();
 });
