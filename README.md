@@ -3,9 +3,7 @@ https://booking-app-deploy.onrender.com
 
 # To run it locally
 
-## Prerequisites
-
-Before you begin, ensure you have Node.js installed on your system.
+Have Node.js installed on your system.
 
 ## Cloning the Repository
 
