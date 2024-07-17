@@ -1,5 +1,5 @@
 # Link to the Website
-(https://booking-app-deploy.onrender.com)
+https://booking-app-deploy.onrender.com
 
 # Setting Up the MERN Booking App
 
