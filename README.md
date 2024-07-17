@@ -1,9 +1,7 @@
 # Link to the Website
 https://booking-app-deploy.onrender.com
 
-# Setting Up the MERN Booking App
-
-This guide will walk you through the process of setting up the MERN Booking App on your local machine.
+# To run it locally
 
 ## Prerequisites
 
