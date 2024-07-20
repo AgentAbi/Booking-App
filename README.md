@@ -1,6 +1,10 @@
 # Link to the Website
 https://booking-app-deploy.onrender.com
 
+# Link to the Website
+Payments are currently unavailable as I am using a test version of Stripe.
+However, any payment attempts will be captured by the Stripe API and will appear in my Stripe account, and Hence it won't show any error.
+
 # To run it locally
 
 Have Node.js installed on your system.
